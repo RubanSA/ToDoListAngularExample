@@ -1,0 +1,42 @@
+<div>{{str|uppercase}}</div>
+<div>{{str|lowercase}}</div>
+<div>{{str|titlecase}}</div>
+<div>{{str|slice:0:6}}</div>
+<div>{{str|slice:31}}</div>
+<div>{{str|slice:-7}}</div>
+<div>{{str|slice:-13:-8}}</div>
+<div>{{num | number:"2.1-2":"ru"}}</div>
+<div>{{num1 | number:"2.1-2"}}</div>
+<div>{{num1 | number:"2.0-0"}}</div>
+<div>Code: {{num | currency:"UAH":"code":"1.2-2"}}</div>
+<div>Symbol: {{num | currency:"UAH":"symbol":"1.2-2"}}</div>
+<div>symbol-narrow{{num | currency:"UAH":"symbol-narrow":"1.2-2":"ru"}}</div>
+<div>symbol-narrow{{num | currency:"Грн.":"symbol":"1.2-2":"ru"}}</div>
+<div>symbol-narrow{{num1 | currency:"JPY":"symbol-narrow":"1.2-2"}}</div>
+<div>Percent: {{num1 | percent:"2.0-2":"ru"}}</div>
+<hr>
+<div>Date Object: {{dateObject | date}}</div>
+<div>Date String: {{dateString | date}}</div>
+<div>Date Number: {{dateNumber | date}}</div>
+<div>Date Number: {{dateNumber | date:"shortDate"}}</div>
+<div>Date Number: {{dateNumber | date:"mediumDate"}}</div>
+<div>Date Number: {{dateNumber | date:"longDate"}}</div>
+<div>Date Number: {{dateNumber | date:"longDate"}}</div>
+<div>Date Number: {{dateObject | date:"long":"GMT+3":"ru"}}</div>
+<div>Date Number: {{dateObject | date:"dd MMMM yyyy г. HH:mm:ss":"GMT+3":"ru"}}</div>
+<hr>
+<div>{{str|slice:-13:-8|uppercase}}</div>
+<div><pre>{{userInfo}}</pre></div>
+<div>
+  <pre>
+    {{userInfo|json}}
+  </pre>
+</div>
+<div *ngFor="let elem of userInfo|keyvalue">
+  <div>Key: {{elem.key}}, Value: {{elem.value}}</div>
+</div>
+<ul>
+  <li *ngFor="let pair of map|keyvalue">{{pair.key}}---->{{pair.value}}</li>
+</ul>
+<h3>{{userSex|i18nSelect:sexMapping}}</h3>
+<div>{{num|format}}</div>

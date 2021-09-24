@@ -2,6 +2,34 @@
 <div><span>Name:</span>{{item.name}}</div>
 <div><span>Дело закончено:</span>{{item.isCompleted}}</div>
 <img src="../../assets/volvo1.jpg" alt="volvo">
-<ul *ngFor="let elem of links">
-    <li>{{elem}}</li>
+<ul>
+    <li *ngFor="let elem of links">{{elem}}</li>
 </ul>
+<table *ngIf="toDoItems.length>2">
+    <thead>
+        <tr>
+            <th>№</th>
+            <th>Название</th>
+            <th>Статус выполнения</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let elem of toDoItems">
+            <td>{{elem.id}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.isCompleted ? "Выполнено":"Не выполнено"}}</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3">{{toDoItems.length|i18nPlural:countMapping}}</td>
+        </tr>
+    </tfoot>
+</table>
+<div [ngSwitch]="car">
+    <div *ngSwitchCase="'BMV'">БМВ</div>
+    <div *ngSwitchCase="'VW'">Фольцваген</div>
+    <div *ngSwitchCase="'Audi'">Ауди</div>
+    <div *ngSwitchCase="'Merceded'">Мерседес</div>
+    <div *ngSwitchDefault>Запорожец</div>
+</div>
