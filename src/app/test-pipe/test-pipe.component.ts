@@ -20,6 +20,8 @@ export class TestPipeComponent implements OnInit {
   sexMapping: {[key:string]:string} = {"male": "Мужчина", "female": "Женщина", "other": "Не определился пока"};
   map: {[key:number]:string} = {1: "Молоко", 2: "Мясо", 3: "Яйца"};
   userSex: string ="other";
+  link= {url: "https://github.com/RubanSA/ToDoListAngularExample.git", title: "Ссылка на репозиторий проекта"};
+  
   constructor() { }
 
   ngOnInit() {

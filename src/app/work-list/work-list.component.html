@@ -1,0 +1,31 @@
+<h2>Список дел</h2>
+<!-- <ul class="items"> -->
+<!-- <ul class="items" [class.purpleColored]="classActive" [class.greenColored]="!classActive"> -->
+<!-- <ul [ngClass]="{purpleColored: classActive, greenColored: !classActive, items: true}"> -->
+<ul [ngClass]="classObject">
+    <li *ngFor="let elem of toDoItems"
+    (click)="onSelect(elem)"
+    [class.activeChoice]="elem===selectedItem"
+    >
+        {{elem.id}}. {{elem.name}}
+    </li>
+</ul>
+<button (click)="activateStyle()">Change Style</button>
+<div><label>Введите размер шрифта:</label>
+    <input type="number" [(ngModel)]="fontSize">
+</div>
+<p [style.fontSize]="fontSizeInPx" [style.color]="'orchid'"><span style="font-weight: bold;">Размер шрифта:</span>{{fontSize}} px</p>
+<p [ngStyle]="{'color': 'red', 'pointer': 'cursor', 'border': '1px dotted blue'}">Hello world!</p>
+<p [ngStyle]="stylebj">Hello world!</p>
+<hr>
+<div *ngIf="selectedItem">
+     <div>
+        <label>Название дела:</label>
+        <input type="text" [(ngModel)]="selectedItem.name">
+    </div>
+    <div>
+        <label>Статус выполнения:</label>
+        <input type="checkbox" [(ngModel)]="selectedItem.isCompleted">
+    </div>
+</div>
+

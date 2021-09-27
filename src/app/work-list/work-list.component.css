@@ -1,0 +1,32 @@
+.items{
+    list-style-type: none;
+    padding: 0;
+    width: 30em;
+}
+.items>li{
+    background-color: #EEE;
+    margin: 0.5em 0;
+    padding: 0.3em;
+}
+.items>li:hover{
+    color: #607D8B;
+background-color: #DDD;
+}
+.purpleColored{
+    color: purple;
+}
+
+.greenColored{
+    color: rgb(26, 172, 26);
+}
+ul li.activeChoice {
+    background-color: rgb(143, 187, 130);
+    color: white;
+    }
+    ul li.activeChoice:hover {
+    background-color: rgb(118, 155, 106);
+    }
+input{
+    width: 400px
+}
+    
